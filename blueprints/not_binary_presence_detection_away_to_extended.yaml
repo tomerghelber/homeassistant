@@ -1,0 +1,28 @@
+blueprint:
+  name: Mark as Away Extended
+  description: Make Presence detection not so Binary - Away to Extended.
+  domain: automation
+  input:
+    rich_selector:
+      name: Rich Location Selector
+      selector:
+        target:
+          entity:
+            domain: input_select
+
+# If motion is detected within the delay,
+# we restart the script.
+mode: restart
+max_exceeded: silent
+
+trigger:
+- platform: state
+  entity_id: !input rich_selector
+  to: 'Away'
+  for:
+    hours: 24
+action:
+- service: input_select.select_option
+  data:
+    entity_id: !input rich_selector
+    option: Extended Away
