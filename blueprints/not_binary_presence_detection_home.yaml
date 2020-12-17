@@ -2,6 +2,7 @@ blueprint:
   name: Mark as Home
   description: Make Presence detection not so Binary - Home.
   domain: automation
+  source_url: https://github.com/tomerghelber/homeassistant/edit/main/blueprints/not_binary_presence_detection_home.yaml
   input:
     rich_selector:
       name: Rich Location Selector
