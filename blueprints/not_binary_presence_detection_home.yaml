@@ -1,0 +1,33 @@
+blueprint:
+  name: Mark as Home
+  description: Make Presence detection not so Binary - Home.
+  domain: automation
+  input:
+    rich_selector:
+      name: Rich Location Selector
+      selector:
+        target:
+          entity:
+            domain: input_select
+
+# If motion is detected within the delay,
+# we restart the script.
+mode: restart
+max_exceeded: silent
+
+trigger:
+- platform: state
+  entity_id: !input rich_selector
+  to: 'Just Arrived'
+  for:
+    minutes: 10
+action:
+- service: input_select.select_option
+  data_template:
+    entity_id: !input rich_selector
+    option: >
+      {% if rich_selector == 'Just Left' %}
+        Home
+      {% else %}
+        Just Arrived
+      {% endif %}
