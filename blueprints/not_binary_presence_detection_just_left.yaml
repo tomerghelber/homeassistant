@@ -2,6 +2,7 @@ blueprint:
   name: Mark as Just Left
   description: Make Presence detection not so Binary - Just Left.
   domain: automation
+  source_url: https://github.com/tomerghelber/homeassistant/edit/main/blueprints/not_binary_presence_detection_just_left.yaml
   input:
     tracker:
       name: Tracker
