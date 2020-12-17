@@ -2,6 +2,7 @@ blueprint:
   name: Mark as Away Extended
   description: Make Presence detection not so Binary - Away to Extended.
   domain: automation
+  source_url: https://github.com/tomerghelber/homeassistant/edit/main/blueprints/not_binary_presence_detection_away_to_extended.yaml
   input:
     rich_selector:
       name: Rich Location Selector
