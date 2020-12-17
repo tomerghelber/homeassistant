@@ -10,6 +10,14 @@ blueprint:
         target:
           entity:
             domain: input_select
+     wait_before_away:
+       name: Wait Before Away
+       description: How much to wait before changing to away in minutes.
+       selector:
+         number:
+           min: 1
+           max: 15
+           unit_of_measurement: minutes
 
 # If motion is detected within the delay,
 # we restart the script.
@@ -21,7 +29,7 @@ trigger:
   entity_id: !input rich_selector
   to: 'Just Left'
   for:
-    minutes: 10
+    minutes: !input wait_before_away
 action:
 - service: input_select.select_option
   data:
