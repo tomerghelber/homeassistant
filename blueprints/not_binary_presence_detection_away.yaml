@@ -19,11 +19,6 @@ blueprint:
            max: 15
            unit_of_measurement: minutes
 
-# If motion is detected within the delay,
-# we restart the script.
-mode: restart
-max_exceeded: silent
-
 trigger:
 - platform: state
   entity_id: !input rich_selector
