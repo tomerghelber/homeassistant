@@ -10,14 +10,14 @@ blueprint:
         target:
           entity:
             domain: input_select
-     wait_before_home:
-       name: Wait Before Home
-       description: How much to wait before changing to home in minutes.
-       selector:
-         number:
-           min: 1
-           max: 15
-           unit_of_measurement: minutes
+    wait_before_home:
+      name: Wait Before Home
+      description: How much to wait before changing to home in minutes.
+      selector:
+        number:
+          min: 1
+          max: 15
+          unit_of_measurement: minutes
 
 trigger:
 - platform: state
