@@ -10,14 +10,14 @@ blueprint:
         target:
           entity:
             domain: input_select
-     wait_before_away:
-       name: Wait Before Away
-       description: How much to wait before changing to away in minutes.
-       selector:
-         number:
-           min: 1
-           max: 15
-           unit_of_measurement: minutes
+    wait_before_away:
+      name: Wait Before Away
+      description: How much to wait before changing to away in minutes.
+      selector:
+        number:
+          min: 1
+          max: 15
+          unit_of_measurement: minutes
 
 trigger:
 - platform: state
